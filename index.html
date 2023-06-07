@@ -1,11 +1,41 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asynchronous Programming</title>
-  </head>
-  <body>
-    <script src="./script.js"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callback Hell Example</title>
+</head>
+<body>
+  <h1>Callback Hell Example:</h1>
+  <div id="output"></div>
+
+  <script>
+    const greet = (message = "", cb = (d) => {}) => {
+      const output = document.getElementById("output");
+      output.innerHTML += message + "<br>";
+      cb(message);
+    };
+
+    greet(10, () => {
+      greet(9, () => {
+        greet(8, () => {
+          greet(7, () => {
+            greet(6, () => {
+              greet(5, () => {
+                greet(4, () => {
+                  greet(3, () => {
+                    greet(2, () => {
+                      greet(1, () => {
+                        greet("Happy Independence Day!!!");
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
 </html>
