@@ -1,8 +1,9 @@
 const greet = (message = "", cb = (d) => {}) => {
-    console.log(message);
+   
+    output.innerHTML += message ;
     cb(message);
   };
-  
+
   greet(10, () => {
     greet(9, () => {
       greet(8, () => {
@@ -24,3 +25,4 @@ const greet = (message = "", cb = (d) => {}) => {
       });
     });
   });
+  const output = document.getElementById("output");
