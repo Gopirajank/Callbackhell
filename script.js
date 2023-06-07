@@ -1,21 +1,20 @@
-const greet = (message = "", cb = (d) => {}) => {
-   
-    output.innerHTML += message ;
-    cb(message);
-  };
+const greets = (message = "", cb = (d) => {}) => {
+  console.log(message);
+  cb(message);
+};
 
-  greet(10, () => {
-    greet(9, () => {
-      greet(8, () => {
-        greet(7, () => {
-          greet(6, () => {
-            greet(5, () => {
-              greet(4, () => {
-                greet(3, () => {
-                  greet(2, () => {
-                    greet(1, () => {
-                      greet("Happy Independence Day!!!");
-                    });
+greets(10, () => {
+
+  greets(9, () => {
+    greets(8, () => {
+      greets(7, () => {
+        greets(6, () => {
+          greets(5, () => {
+            greets(4, () => {
+              greets(3, () => {
+                greets(2, () => {
+                  greets(1, () => {
+                    greets("Happy Independence Day!!!");
                   });
                 });
               });
@@ -25,4 +24,4 @@ const greet = (message = "", cb = (d) => {}) => {
       });
     });
   });
-  const output = document.getElementById("output");
+});
